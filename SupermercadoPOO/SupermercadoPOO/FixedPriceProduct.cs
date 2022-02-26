@@ -10,11 +10,12 @@ namespace SupermercadoPOO
     {
         public override decimal ValueToPay()
         {
-            return Price * (decimal)Tax;
+            return Price * (decimal)(1+Tax);
         }
         public override string ToString()
         {
-            return base.ToString();
+            return base.ToString() + "\n\t" +
+                $"Value : ................ {ValueToPay():C2}";
         }
     }
 }

@@ -12,13 +12,14 @@ namespace SupermercadoPOO
         public float Quantity { get; set; }
         public override decimal ValueToPay()
         {
-            return Price* (decimal)Quantity * (decimal)Tax ;
+            return Price* (decimal)Quantity * (decimal)(1+Tax) ;
         }
         public override string ToString()
         {
             return base.ToString() + "\n\t" + 
                 $"Quantity ............ {Quantity} \n\t " +
-                $"Measurement ......... {Measurement} \n\t ";
+                $"Measurement ......... {Measurement} \n\t " +
+                $"Value : ............. {ValueToPay():C2}";
         }
     }
 }
